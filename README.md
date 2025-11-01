@@ -10,16 +10,16 @@ If you'd like to run this site locally:
 
 ```bash
 # Clone the repository
-git clone https://github.com/<your-username>/<repo-name>.git
+git clone https://github.com/yassinbehi/My_website.git
 
 # Navigate into the project folder
-cd <repo-name>
+cd My_website
 
-# Install dependencies (if applicable)
+# Install dependencies
 npm install
 
 # Run the development server
 npm run dev
 
 # Open in your browser
-http://localhost:3000
+http://localhost:port
