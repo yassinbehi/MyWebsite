@@ -1,0 +1,15 @@
+﻿# Node deps and build
+node_modules/
+.next/
+.cache/
+
+# Logs and OS
+*.log
+.DS_Store
+
+# Local env
+.env
+.env.local
+
+# Editor
+.vscode/

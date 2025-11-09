@@ -10,6 +10,7 @@ const Sidebar = () => {
 
   const navItems = [
     { name: 'Home', path: '#home' },
+    { name: 'AboutMe', path: '#about' },
     { name: 'Work', path: '#work' },
     { name: 'Skills', path: '#skills' }
   ];
@@ -33,20 +34,27 @@ const Sidebar = () => {
   useEffect(() => {
     const handleScroll = () => {
       const sections = navItems.map(item => item.path.replace('#', ''));
-      const scrollPosition = window.scrollY + 100;
+      const viewportHeight = window.innerHeight;
+      const scrollPosition = window.scrollY;
+      const threshold = viewportHeight * 0.4; // 40% of viewport height
 
-      for (const section of sections) {
+      let currentSection = sections[0]; // Default to first section
+      let minDistance = Infinity;
+
+      sections.forEach(section => {
         const element = document.getElementById(section);
         if (element) {
-          const offsetTop = element.offsetTop;
-          const offsetHeight = element.offsetHeight;
-
-          if (scrollPosition >= offsetTop && scrollPosition < offsetTop + offsetHeight) {
-            setActiveSection(section);
-            break;
+          const rect = element.getBoundingClientRect();
+          const distance = Math.abs(rect.top - threshold);
+          
+          if (distance < minDistance) {
+            minDistance = distance;
+            currentSection = section;
           }
         }
-      }
+      });
+
+      setActiveSection(currentSection);
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -119,16 +127,6 @@ const Sidebar = () => {
                   }
                 `}
               >
-                {/* Icon placeholder using first letter */}
-                <div className={`
-                  w-6 h-6 flex items-center justify-center rounded-full text-xs font-bold transition-all duration-300
-                  ${isActive 
-                    ? 'bg-emerald-400/20 text-emerald-400 scale-110' 
-                    : 'bg-gray-600/50 text-gray-400 group-hover:bg-emerald-400/20 group-hover:text-emerald-400 group-hover:scale-110'
-                  }
-                `}>
-                  {item.name.charAt(0)}
-                </div>
                 
                 <span className="font-medium whitespace-nowrap">{item.name}</span>
                 

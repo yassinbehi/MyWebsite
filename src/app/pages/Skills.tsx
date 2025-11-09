@@ -1,42 +1,7 @@
-import React from 'react'
-import BlurText from '@/components/BlurText'
+
+import { DivideCircle } from "lucide-react";
 
 export default function Skills() {
-  const skillCategories = [
-    {
-      name: "Frontend Development",
-      icon: "💻",
-      skills: [
-        { name: "React", level: 90, color: "from-cyan-400 to-blue-500" },
-        { name: "Next.js", level: 85, color: "from-white to-gray-300" },
-        { name: "TypeScript", level: 50, color: "from-blue-400 to-blue-600" },
-        { name: "Tailwind CSS", level: 70, color: "from-cyan-400 to-teal-500" },
-        { name: "JavaScript", level: 65, color: "from-yellow-400 to-yellow-600" }
-      ]
-    },
-    {
-      name: "Backend Development",
-      icon: "⚡",
-      skills: [
-        { name: "Node.js", level: 50, color: "from-green-400 to-green-600" },
-        { name: "Python", level: 50, color: "from-blue-500 to-indigo-600" },
-        { name: "Express", level: 50, color: "from-gray-400 to-gray-600" },
-        { name: "MongoDB", level: 70, color: "from-green-500 to-green-700" },
-        { name: "PostgreSQL", level: 75, color: "from-blue-400 to-blue-700" }
-      ]
-    },
-    {
-      name: "Tools & Technologies",
-      icon: "🛠️",
-      skills: [
-        { name: "Git", level: 90, color: "from-orange-400 to-red-500" },
-        { name: "Docker", level: 50, color: "from-blue-400 to-cyan-500" },
-        { name: "AWS", level: 60, color: "from-orange-400 to-yellow-500" },
-        { name: "Figma", level: 50, color: "from-purple-400 to-pink-500" },
-        { name: "Vercel", level: 80, color: "from-white to-gray-400" }
-      ]
-    }
-  ];
 
   const featuredSkills = [
     { name: "React", percentage: 90, description: "Advanced hooks, context, performance optimization" },
@@ -45,8 +10,9 @@ export default function Skills() {
     { name: "Tailwind CSS", percentage: 70, description: "Utility-first, responsive design, plugins" }
   ];
 
-  return (
-    <div className="bg-black text-white min-h-screen py-20 px-4 relative overflow-hidden">
+  return (<>
+  <div className="h-px w-100% bg-white p-0  m-0"></div>
+    <div className="bg-gradient-to-b from-gray-900 to-gray-800 text-white min-h-screen py-20 px-4 relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0 overflow-hidden">
         <div className="absolute -top-40 -left-40 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl"></div>
@@ -56,15 +22,12 @@ export default function Skills() {
 
       {/* Header Section */}
       <div className="relative z-10 text-center mb-20">
-        <BlurText
-          text="SKILLS & EXPERTISE"
-          delay={1000}
-          animateBy="words"
-          direction="top"
-          className="text-5xl md:text-7xl font-bold bg-gradient-to-r from-cyan-400 via-purple-400 to-emerald-400 bg-clip-text text-transparent mb-6"
-        />
         
-        <div className="max-w-3xl mx-auto">
+        <div className="flex justify-center">
+          <h2 className="text-4xl font-bold text-emerald-400">TechSkills</h2>
+          </div>
+        <div className="h-px w-40 bg-white mx-auto m-6"></div>
+        <div className="max-w-3xl mx-auto m-10">
           <h2 className="text-xl md:text-2xl text-gray-300 font-light leading-relaxed">
             Mastering the <span className="text-cyan-400 font-semibold">tools</span> and{' '}
             <span className="text-purple-400 font-semibold">technologies</span> that bring{' '}
@@ -107,46 +70,8 @@ export default function Skills() {
         </div>
       </div>
 
-      {/* Skills Grid */}
-      <div className="relative z-10 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {skillCategories.map((category, categoryIndex) => (
-            <div 
-              key={category.name}
-              className="group bg-gray-900/40 backdrop-blur-sm rounded-2xl p-6 border border-gray-800 hover:border-cyan-500/50 transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-cyan-500/10"
-            >
-              {/* Category Header */}
-              <div className="flex items-center gap-4 mb-6">
-                <div className="text-3xl">{category.icon}</div>
-                <h3 className="text-xl font-bold text-white">{category.name}</h3>
-              </div>
-
-              {/* Skills List */}
-              <div className="space-y-4">
-                {category.skills.map((skill, skillIndex) => (
-                  <div key={skill.name} className="group">
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-gray-300 font-medium">{skill.name}</span>
-                      <span className="text-cyan-400 text-sm font-bold">{skill.level}%</span>
-                    </div>
                     
-                    {/* Progress Bar */}
-                    <div className="w-full bg-gray-800 rounded-full h-2 overflow-hidden">
-                      <div 
-                        className={`h-full rounded-full bg-gradient-to-r ${skill.color} transition-all duration-1000 ease-out transform origin-left`}
-                        style={{ 
-                          width: `${skill.level}%`,
-                          transitionDelay: `${(categoryIndex * 100) + (skillIndex * 150)}ms`
-                        }}
-                      ></div>
-                    </div>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-        </div>
-
+      
         {/* Additional Skills Tags */}
         <div className="mt-16 text-center">
           <h4 className="text-2xl font-bold text-white mb-8">Also Experienced With</h4>
@@ -165,6 +90,6 @@ export default function Skills() {
           </div>
         </div>
       </div>
-    </div>
+    </>
   )
 }
