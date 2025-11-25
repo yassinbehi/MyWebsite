@@ -15,7 +15,7 @@ export default function Work() {
       <div className="relative z-10 text-center mb-16">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-xl md:text-2xl text-gray-300 font-light leading-relaxed mb-8">
-            Crafting digital experiences that blend innovation with  elegance. Each project tells a unique story.
+            A selection of thoughtfully crafted projects, each built with purpose.
           </h2>
         
         </div>

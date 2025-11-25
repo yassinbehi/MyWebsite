@@ -15,7 +15,7 @@ const Sidebar = () => {
     { name: 'Skills', path: '#skills' }
   ];
 
-  // Check screen size and handle responsiveness
+  // responsiveness
   useEffect(() => {
     const checkMobile = () => {
       const mobile = window.innerWidth < 768;
@@ -30,15 +30,15 @@ const Sidebar = () => {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Handle scroll to detect active section
+  // detect active section
   useEffect(() => {
     const handleScroll = () => {
       const sections = navItems.map(item => item.path.replace('#', ''));
       const viewportHeight = window.innerHeight;
       const scrollPosition = window.scrollY;
-      const threshold = viewportHeight * 0.4; // 40% of viewport height
+      const threshold = viewportHeight * 0.4; 
 
-      let currentSection = sections[0]; // Default to first section
+      let currentSection = sections[0]; 
       let minDistance = Infinity;
 
       sections.forEach(section => {
@@ -58,7 +58,7 @@ const Sidebar = () => {
     };
 
     window.addEventListener('scroll', handleScroll);
-    handleScroll(); // Check initial position
+    handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
@@ -81,7 +81,7 @@ const Sidebar = () => {
     }
   };
 
-  // Mobile toggle button
+  // Mobile button
   const ToggleButton = () => (
     <button
       onClick={() => setIsOpen(!isOpen)}
@@ -130,7 +130,7 @@ const Sidebar = () => {
                 
                 <span className="font-medium whitespace-nowrap">{item.name}</span>
                 
-                {/* Active indicator dot */}
+               
                 {isActive && (
                   <div className="ml-auto w-2 h-2 bg-emerald-400 rounded-full animate-pulse" />
                 )}
@@ -142,7 +142,7 @@ const Sidebar = () => {
     </nav>
   );
 
-  // Mobile overlay
+  
   const MobileOverlay = () => (
     isMobile && isOpen && (
       <div 

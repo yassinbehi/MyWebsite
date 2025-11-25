@@ -77,8 +77,8 @@ export default function Skills() {
           <h4 className="text-2xl font-bold text-white mb-8">Also Experienced With</h4>
           <div className="flex flex-wrap justify-center gap-3">
             {[
-              "WebSockets",
-              "SASS", "Styled Components", "Framer ",".net", "Three.js"
+              "c",
+              "SASS", "Swing", "java ","python", "c#"
             ].map((tech) => (
               <span 
                 key={tech}

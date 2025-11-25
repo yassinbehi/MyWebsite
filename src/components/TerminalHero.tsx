@@ -24,7 +24,7 @@ export default function TerminalHero() {
         <span>C:\Users\HP&gt;</span>
         <TextType 
           text={[
-            "Full-Stack Development",
+            "Web Development",
             "UI/UX Design",
             "Interactive Experiences"
           ]}
