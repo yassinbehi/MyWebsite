@@ -27,13 +27,6 @@ export default function Skills() {
           <h2 className="text-4xl font-bold text-emerald-400">TechSkills</h2>
           </div>
         <div className="h-px w-40 bg-white mx-auto m-6"></div>
-        <div className="max-w-3xl mx-auto m-10">
-          <h2 className="text-xl md:text-2xl text-gray-300 font-light leading-relaxed">
-            Mastering the <span className="text-cyan-400 font-semibold">tools</span> and{' '}
-            <span className="text-purple-400 font-semibold">technologies</span> that bring{' '}
-            <span className="text-emerald-400 font-semibold">ideas to life</span>
-          </h2>
-        </div>
       </div>
 
       {/* Featured Skills Progress */}
@@ -51,17 +44,6 @@ export default function Skills() {
             >
               <div className="flex justify-between items-center mb-3">
                 <span className="text-lg font-semibold text-white">{skill.name}</span>
-                <span className="text-cyan-400 font-bold">{skill.percentage}%</span>
-              </div>
-              
-              <div className="w-full bg-gray-800 rounded-full h-3 mb-3 overflow-hidden">
-                <div 
-                  className={`h-full rounded-full bg-gradient-to-r from-cyan-400 to-purple-400 transition-all duration-1000 ease-out`}
-                  style={{ 
-                    width: `${skill.percentage}%`,
-                    transitionDelay: `${index * 200}ms`
-                  }}
-                ></div>
               </div>
               
               <p className="text-gray-400 text-sm">{skill.description}</p>
@@ -78,7 +60,7 @@ export default function Skills() {
           <div className="flex flex-wrap justify-center gap-3">
             {[
               "c",
-              "SASS", "Swing", "java ","python", "c#"
+              "php", "Swing", "pandas ","express.js", "c#"
             ].map((tech) => (
               <span 
                 key={tech}

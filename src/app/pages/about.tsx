@@ -20,12 +20,22 @@ export default function About() {
               <div className="h-px w-50 bg-white" />
               <p className="text-xl md:text-2xl text-gray-300">
                 <DecryptedText
-                  text="I’m Yassin Behi, a software engineering student who’s genuinely passionate about web development and building things that make life a little easier. I started coding with C and went on to earn certifications in database design, which helped me understand how systems really work behind the scenes. Over time, I’ve worked on several freelance projects, creating solutions for clients and sometimes just for myself when I wanted to fix a problem or try a new idea. I love learning, experimenting, and turning ideas into real working products."
+                  text="I’m Yassin Behi, a software engineering student who’s genuinely passionate about web development and building things that make life a little easier. I started coding with C and went on to earn certifications in database design Over time, I’ve worked on several freelance projects, creating solutions for clients and sometimes just for myself when I wanted to fix a problem or try a new idea. I love learning, experimenting, and turning ideas into real working products."
                   animateOn="view"
-                  speed={100}
+                  speed={20}
                   revealDirection="start"
                 />
               </p>
+
+              <div className="mt-6">
+                <a
+                  href="/Yassin-Elbehi-CV.pdf"
+                  download
+                  className="inline-flex items-center justify-center rounded-lg bg-emerald-400 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-emerald-400/20 transition hover:-translate-y-0.5 hover:bg-emerald-300"
+                >
+                  Download CV
+                </a>
+              </div>
 
               {/* Contact block */}
               <div className="mt-6">

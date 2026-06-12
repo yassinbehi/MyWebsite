@@ -7,6 +7,7 @@ const Sidebar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [activeSection, setActiveSection] = useState('home');
+  const [show, setShow] = useState(false);
 
   const navItems = [
     { name: 'Home', path: '#home' },
@@ -14,6 +15,11 @@ const Sidebar = () => {
     { name: 'Work', path: '#work' },
     { name: 'Skills', path: '#skills' }
   ];
+
+  useEffect(() => {
+    setTimeout(() => setShow(true), 2000);
+  }, []);
+
 
   // responsiveness
   useEffect(() => {
@@ -151,6 +157,8 @@ const Sidebar = () => {
       />
     )
   );
+
+  if (!show) return null;
 
   return (
     <>

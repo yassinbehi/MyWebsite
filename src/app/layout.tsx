@@ -21,6 +21,16 @@ export default function RootLayout({
       </head>
       <body className="antialiased font-sans">
         {children}
+        <footer className="bg-slate-950 text-slate-300 py-8 border-t border-slate-800">
+          <div className="container mx-auto px-4 text-center">
+            <p className="text-sm md:text-base">
+              © {new Date().getFullYear()} Yassin Behi. Built with Next.js.
+            </p>
+            <p className="text-xs text-slate-500 mt-2">
+              Designed to showcase my web development portfolio and CV.
+            </p>
+          </div>
+        </footer>
       </body>
     </html>
   );
