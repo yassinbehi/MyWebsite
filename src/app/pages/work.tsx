@@ -23,7 +23,7 @@ export default function Work() {
 
       {/* Projects Grid */}
       <div className="relative z-10 max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+        <div className="flex flex-wrap justify-center gap-8">
           {/* Project 1 */}
           <TiltedCard
             imageSrc="e-commerce.png"
@@ -38,8 +38,8 @@ export default function Work() {
             showMobileWarning={false}
             showTooltip={true}
             displayOverlayContent={true}
-            containerClassName="w-full group cursor-pointer"
-            href="https://example.com"
+            containerClassName="w-full max-w-[360px] group cursor-pointer"
+            href="https://github.com/yassinbehi/GreenHaven-onlineShop.git"
             overlayContent={
               <div className="text-center p-6">
                 <h3 className="text-xl font-bold text-white mb-2">e-commerce platform</h3>
@@ -56,6 +56,36 @@ export default function Work() {
             }
           />
 
+          <TiltedCard
+            imageSrc="finance.png"
+            altText="financeDashboard"
+            captionText="financeDashboard"
+            containerHeight="320px"
+            containerWidth="100%"
+            imageHeight="240px"
+            imageWidth="100%"
+            rotateAmplitude={15}
+            scaleOnHover={1.08}
+            showMobileWarning={false}
+            showTooltip={true}
+            displayOverlayContent={true}
+            containerClassName="w-full max-w-[360px] group cursor-pointer"
+            href="https://github.com/yassinbehi/Finance-Dashboard-.git"
+            overlayContent={
+              <div className="text-center p-6">
+                <h3 className="text-xl font-bold text-white mb-2"></h3>
+                <p className="text-gray-300 text-sm mb-4"></p>
+                <div className="flex justify-center gap-2">
+                  <span className="px-3 py-1 bg-emerald-500/20 text-emerald-300 rounded-full text-xs border border-emerald-500/30 bold">
+                    flask
+                  </span>
+                  <span className="px-3 py-1 bg-purple-500/20 text-purple-300 rounded-full text-xs border border-purple-500/30 bold">
+                    chart.js
+                  </span>
+                </div>
+              </div>
+            }
+          />
         
         </div>
       </div>
