@@ -5,7 +5,7 @@ export const metadata: Metadata = {
   title: "Yassin El Behi",
   description: "Yassin El Behi - Web Developer Portfolio",
   icons: {
-    icon: "/profile.jpg",
+    icon: "/favicon.ico",
   },
 };
 
