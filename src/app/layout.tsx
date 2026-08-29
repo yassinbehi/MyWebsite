@@ -2,10 +2,22 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Yassin El Behi",
-  description: "Yassin El Behi - Web Developer Portfolio",
-  icons: {
-    icon: "/favicon.ico",
+  metadataBase: new URL("https://yassinbehi.com"),
+  title: "Yassin El Behi — Web & AI Developer",
+  description:
+    "Freelance web and AI developer. Software engineering student and certified AI developer (Claude Code Partner Program), building web applications, AI features and dashboards for real business needs.",
+  icons: { icon: "/favicon.ico" },
+  openGraph: {
+    title: "Yassin El Behi — Web & AI Developer",
+    description:
+      "I build web and AI products businesses actually use. Web apps, AI features and dashboards, delivered end to end.",
+    type: "website",
+    images: ["/profile.jpg"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Yassin El Behi — Web & AI Developer",
+    description: "I build web and AI products businesses actually use.",
   },
 };
 
@@ -17,24 +29,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Use Google Fonts link instead of next/font to avoid Turbopack internal imports */}
+        {/* Google Fonts via link rather than next/font, to avoid Turbopack internal imports */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Fira+Code:wght@400;700&display=swap" rel="stylesheet" />
+        <link
+          href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Inter+Tight:wght@500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+          rel="stylesheet"
+        />
       </head>
-      <body className="antialiased font-sans">
-        {children}
-        <footer className="bg-slate-950 text-slate-300 py-8 border-t border-slate-800">
-          <div className="container mx-auto px-4 text-center">
-            <p className="text-sm md:text-base">
-              © {new Date().getFullYear()} Yassin Behi. Built with Next.js.
-            </p>
-            <p className="text-xs text-slate-500 mt-2">
-              Designed to showcase my web development portfolio and CV.
-            </p>
-          </div>
-        </footer>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }

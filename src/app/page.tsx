@@ -1,25 +1,35 @@
-import Hero from "@/app/pages/hero";
-import Work from "./pages/work";
-import Sidebar from "@/components/Sidebar";
-import Skills from "./pages/Skills";
-import About from "./pages/about";
+import Nav from '@/components/Nav';
+import Hero from '@/components/sections/Hero';
+import Marquee from '@/components/sections/Marquee';
+import Services from '@/components/sections/Services';
+import Work from '@/components/sections/Work';
+import Process from '@/components/sections/Process';
+import About from '@/components/sections/About';
+import Skills from '@/components/sections/Skills';
+import Testimonials from '@/components/sections/Testimonials';
+import Contact from '@/components/sections/Contact';
+import Footer from '@/components/sections/Footer';
 
+/**
+ * Narrative order: hook → proof of stack → what I sell → evidence →
+ * what buying feels like → who I am → tools → social proof → ask.
+ */
 export default function Home() {
   return (
-    <main className="relative">
-      <Sidebar />
-      <section id="home">
+    <>
+      <Nav />
+      <main>
         <Hero />
-      </section>
-      <section id="about">
-        <About />
-      </section>
-      <section id="work">
+        <Marquee />
+        <Services />
         <Work />
-      </section>
-      <section id="skills">
+        <Process />
+        <About />
         <Skills />
-      </section>
-    </main>
+        <Testimonials />
+        <Contact />
+      </main>
+      <Footer />
+    </>
   );
 }

@@ -13,3 +13,9 @@ node_modules/
 
 # Editor
 .vscode/
+
+# Claude Code
+.claude/
+
+# TypeScript incremental build cache
+tsconfig.tsbuildinfo
